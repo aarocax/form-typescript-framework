@@ -1,0 +1,59 @@
+.form__controls {
+
+    .form__button {
+        background-color: $bbva-aqua-dark;
+        border: 1px solid $bbva-aqua-dark;
+        color: $bbva-white;
+        font-family: $font-medium;
+        border: 0;
+        font-size: 15px;
+        border-radius: 1px;
+        padding: 15px 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 0 !important;
+        &:disabled {
+            background-color: rgba($color: $bbva-blue2, $alpha: 0.4);
+            color: $bbva-disabled-gray;
+            cursor: not-allowed;
+            &:hover {
+                background-color: rgba($color: $bbva-blue2, $alpha: 0.4);
+                color: $bbva-disabled-gray;
+                border: 1px solid rgba($color: $bbva-blue2, $alpha: 0.4);
+            }
+        }
+        &:hover {
+            background-color: transparent;
+            color: $bbva-aqua-dark;
+            border: 1px solid $bbva-aqua-dark;
+        }
+        
+    }
+}
+
+.form__button#close {
+    margin: 5% 0 0 0 !important;
+}
+
+// Responsive-1280px
+@include max-width($desktop){
+}
+// Responsive-992px
+@include max-width($small-desktop){
+}
+// Responsive-768px
+@include max-width($tablet){
+    .form__controls {
+            // margin-top: 10%;
+            // margin-bottom: 5%;
+            margin: auto;
+            padding: 8% 0;
+    
+        .form__button {
+            margin: 0 auto !important;
+        }
+    }
+}
+// Responsive-576px
+@include max-width($movil){
+}

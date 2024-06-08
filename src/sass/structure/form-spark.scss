@@ -1,0 +1,633 @@
+.form-spark {
+
+    > .outerDiv{
+        display: none;
+    }
+    .tab-style#tab3,
+    .tab-style#tab3 > .outerDiv{
+        //display: block !important;
+    }
+    // .form__controls,
+    // .form__controls button{
+    //     display: block !important;
+    // }
+
+    .tab-style {
+        font-family: $font-regular;
+        height: 100%;
+    }
+
+    .form__progreso {
+        display: none !important;
+    }
+
+    .form__progreso .form__progreso-estado {
+        font-family: $font-regular-italic;
+        font-size: 15px;
+    }
+
+    .title-boton {
+        align-items: flex-start;
+        gap: 15px;
+        height: 100%;
+        width: 100%;
+        padding-top: 5%;
+
+        .btn-primary-arrow {
+            outline: none;
+            border: 0;
+            background-color: transparent;
+            padding: 0;
+            cursor: pointer;
+            height: fit-content;
+            transition: all 0.4s ease;
+            height: 17px;
+            position: absolute;
+            left: -40px;
+            padding-top: 8px;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+        }
+
+        .tab-subtitle {
+            font-family: $font-regular;
+            font-size: 15px;
+            line-height: 24px;
+            margin: 0;
+            width: 40%;
+        }
+    }
+
+    .outerDiv.contenedor {
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+
+        h3 {
+            font-family: $font-bold;
+            font-size: 26px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 15px;
+        }
+
+        .leftDiv {
+            .interrogacion {
+                justify-content: space-between;
+
+                .input__description-message {
+                    position: relative;
+                    transition: all 0.3s ease-in-out;
+                    height: fit-content;
+                    margin: 0;
+
+                    .input__info-span {
+                        display: none;
+                    }
+
+
+                    &:hover {
+                        .input__info-span {
+                            display: flex;
+                            flex-direction: column;
+                            position: absolute;
+                            bottom: 32px;
+                            left: 10px;
+                            justify-content: space-between;
+                            background-color: $bbva-blue;
+                            color: $bbva-white;
+                            padding: 16px;
+                            width: 220px;
+
+                            span {
+                                color: $bbva-white;
+                            }
+
+                            .link-button {
+                                display: none;
+                                appearance: none;
+                                color: $bbva-clear-blue;
+                                font-family: $font-medium;
+                                font-weight: 500;
+                                background-color: transparent;
+                                border: 0;
+                                align-self: flex-end;
+                                margin: 0;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+
+                                &:hover {
+                                    color: $bbva-medium-blue;
+                                }
+                            }
+
+                            &::before {
+                                content: ' ';
+                                position: absolute;
+                                width: 0;
+                                height: 0;
+                                left: 0px;
+                                right: auto;
+                                top: auto;
+                                bottom: -10px;
+                                border: 11px solid;
+                                border-color: transparent transparent transparent $bbva-blue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .form__button {
+                width: fit-content;
+                background-color: $bbva-aqua-dark;
+                border: 1px solid $bbva-aqua-dark;
+                color: $bbva-white;
+                font-family: $font-medium;
+                border: 0;
+                font-size: 15px;
+                border-radius: 1px;
+                padding: 15px 30px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:disabled {
+                    background-color: $bbva-bar-gray;
+                    color: $bbva-disabled-gray;
+                    cursor: initial;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                    color: $bbva-aqua-dark;
+                    border: 1px solid $bbva-aqua-dark;
+                }
+
+                &#send-form {
+                    margin-top: 5%;
+                }
+            }
+
+            &[data-name="pais"] {
+                gap: 30px;
+
+                .select-container .form__select {
+                    row-gap: 30px;
+                }
+            }
+
+            .form__element .flex-column.flex-checkbox {
+                gap: 40px;
+            }
+        }
+
+        .rightDiv {
+            padding: 5%;
+            height: fit-content;
+        }
+
+        .form__element {
+            width: 100%;
+            justify-content: space-evenly;
+            color: $bbva-black;
+            margin-top: 3%;
+            grid-column-gap: 25%;
+            padding: 0;
+
+            label.title {
+                font-size: 15px;
+                font-family: $font-light;
+            }
+
+            h4.subtitle {
+                font-size: 20px;
+                line-height: 24px;
+                margin-bottom: 0;
+                font-family: $font-bold;
+            }
+
+            .form__radio {
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                position: relative;
+                row-gap: 25px;
+
+                .flex-row {
+                    align-items: center;
+                    gap: 5px;
+                }
+
+                input[type="radio"] {
+                    margin: 0;
+                }
+
+                &-container {
+                    margin-top: 6%;
+                }
+            }
+
+            .form__select {
+                position: relative;
+                width: 100%;
+                row-gap: 15px;
+                margin-top: 3%;
+
+                select {
+                    background: $bbva-clear-gray;
+                    color: $bbva-dark-gray;
+                    outline: 0;
+                    border: none;
+                    font-family: $font-regular;
+                    letter-spacing: 0;
+                    border-bottom: 1px solid $bbva-dark-gray;
+                    appearance: none;
+                    min-width: 200px;
+                    width: 100%;
+                    padding: 10px 36px 8px 16px;
+                    height: 52px;
+                    box-sizing: border-box;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    -ms-appearance: none;
+                    appearance: none;
+                    text-indent: 1px;
+                    text-overflow: "";
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    &+i {
+                        font-size: 12px;
+                        position: absolute;
+                        top: 28px;
+                        transform: translateY(-50%);
+                        right: 20px;
+                        pointer-events: none;
+                        color: $bbva-medium-blue;
+                    }
+                    &:hover,
+                    &.success {
+                        color: $bbva-black;
+                    }
+                }
+            }
+
+            .form__input i.bbva-coronita_search {
+                position: absolute;
+                bottom: 0px;
+                right: 0;
+                background-color: $bbva-medium-blue;
+                height: 100%;
+                width: 13%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $bbva-white;
+            }
+            .form__input{
+                input{
+                    transition: all 0.3s ease;
+                    &:hover {
+                        color: $bbva-black;
+                        &::placeholder{
+                            color: $bbva-black;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.contenedor-intro {
+            grid-template-columns: 1.5fr 1fr;
+            padding-bottom: 5%;
+            padding-top: 5%;
+
+            .leftDiv.flex-column {
+                justify-content: space-between;
+            }
+
+            h1 {
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 48px;
+                font-family: $font-bold;
+            }
+
+            h2 {
+                font-weight: 700;
+                font-size: 68px;
+                line-height: 72px;
+                font-family: $font-bold;
+                margin: 0;
+            }
+        }
+
+        &.contenedor-final {
+            height: 100vh;
+            padding-top: 5%;
+            padding-bottom: 5%;
+
+            h2 {
+                font-size: 40px;
+                line-height: 48px;
+                margin: 0;
+                font-family: $font-bold;
+            }
+
+            .leftDiv {
+                justify-content: space-between;
+
+            }
+            .leftDiv_confirmacion > .parrafo,
+            .leftDiv_confirmacion > .parrafo p{
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+    }
+
+
+    .form__element [data-name="legal"] {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start !important;
+        row-gap: 28px;
+        font-size: 15px;
+        line-height: 24px;
+        .form__checkbox {
+            height: auto;
+            a {
+                color: $bbva-black;
+                text-decoration: underline;
+                padding-bottom: 1.5%;
+            }
+        }
+
+        .form__checkbox-label {
+            min-height: 24px;
+        }
+
+        .form__checkbox-input {
+            height: 24px;
+            width: 24px;
+        }
+
+        .form__checkbox-input+label {
+            height: 100%;
+        }
+
+        .form__checkbox-input+label::before {
+            height: 24px;
+            min-width: 24px;
+            width: 24px;
+        }
+
+        .form__checkbox-input+label:after {
+            width: 14px;
+            height: 7px;
+        }
+    }
+
+}
+
+// Responsive-1280px
+@include max-width($desktop) {}
+
+// Responsive-992px
+@include max-width($small-desktop) {}
+
+// Responsive-768px
+@include max-width($tablet) {
+    .form-spark {
+        height: calc(100vh - 63px - 48px - 8px);
+
+        .title-boton {
+            flex-direction: column;
+            align-items: flex-start;
+            position: static;
+            height: fit-content !important;
+
+            .btn-primary-arrow {
+                height: 38px;
+                position: static;
+                margin-bottom: 25px;
+
+                svg {
+                    width: auto;
+                    height: 28px;
+                }
+            }
+
+            .tab-subtitle {
+                width: 100%;
+            }
+        }
+
+        .tab-style {
+            height: fit-content;
+
+        }
+
+        .outerDiv.contenedor {
+            .form__element {
+                height: auto;
+                justify-content: flex-start;
+                padding: 0;
+                margin: 0;
+
+                label.title {
+                    line-height: 25px;
+                }
+            }
+
+            .leftDiv {
+                &[data-name="pais"] {
+
+                    .select-container .form__select {
+                        row-gap: 40px;
+                    }
+                }
+
+                p {
+                    line-height: 24px;
+                }
+
+                .interrogacion {
+                    .input__description-message {
+                        margin-top: 1%;
+                        &:active,
+                        &:hover,
+                        &:focus-within{
+                            .input__info-span {
+                            display: none;
+                            }
+                        }
+                        &.open-tooltip {
+                            .input__info-span {
+                                right: 10px;
+                                left: unset;
+                                display: flex;
+                                flex-direction: column;
+                                position: absolute;
+                                bottom: 32px;
+                                justify-content: space-between;
+                                background-color: #072146;
+                                color: #FFFFFF;
+                                padding: 16px;
+                                width: 220px;
+                                span {
+                                    left: -220px;
+                                }
+                                .link-button {
+                                    display: block;
+                                    appearance: none;
+                                    color: $bbva-clear-blue;
+                                    font-family: $font-medium;
+                                    font-weight: 500;
+                                    background-color: transparent;
+                                    border: 0;
+                                    align-self: flex-end;
+                                    margin: 0;
+                                    cursor: pointer;
+                                    transition: all 0.3s ease;
+                                    &:hover {
+                                        color: $bbva-medium-blue;
+                                    }
+                                }
+                                &::before {
+                                    -moz-transform: scale(-1, -1);
+                                    -o-transform: scale(-1, -1);
+                                    -webkit-transform: scale(-1, -1);
+                                    transform: scale(-1, -1);
+                                    content: ' ';
+                                    left: auto;
+                                    right: 0px;
+                                    bottom: -7px;
+                                    top: auto;
+                                    position: absolute;
+                                    width: 0;
+                                    height: 0;
+                                    border: 11px solid;
+                                    border-color: transparent transparent transparent $bbva-blue;
+                                }
+                            }
+
+                        }
+                    }
+                }
+
+                .form__element {
+                    .form__field {
+                        width: 100%;
+                    }
+                }
+
+                &.large {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 65px;
+                    margin-top: 40px;
+                }
+            }
+
+            .rightDiv {
+                &.toggle-window {
+                    background-color: $bbva-blue;
+                    color: $bbva-white;
+
+                    .container {
+                        border-bottom: 1px solid $bbva-white;
+                    }
+
+                    #toggle+label,
+                    #toggle2+label,
+                    #toggle3+label {
+                        color: $bbva-white;
+                    }
+
+                    .message {
+                        .message_top {
+                            p {
+                                color: $bbva-white;
+                            }
+
+                            .right a {
+                                color: $bbva-clear-blue;
+                            }
+                        }
+
+                        .content {
+                            p {
+                                color: $bbva-white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.contenedor-intro {
+                display: flex;
+                flex-direction: column-reverse;
+                padding: 0;
+                justify-content: flex-end;
+                margin: 0;
+
+                .rightDiv {
+                    padding: 0;
+                    height: 225px;
+                    overflow: hidden;
+                    width: 100vw;
+                    margin: 0 auto;
+                }
+
+                .leftDiv {
+                    width: 95%;
+                    margin: 0 auto;
+
+                    h2 {
+                        font-size: 22px;
+                        line-height: 32px;
+                    }
+
+                    h1 {
+                        font-size: 18px;
+                        line-height: 24px;
+                        margin-bottom: 64px;
+                    }
+                }
+
+            }
+
+            &.contenedor-final {
+                h2 {
+                    font-size: 26px;
+                    line-height: 32px;
+                }
+        
+                .leftDiv {
+                    height: 85vh;
+                }
+
+
+                .form__button#close {
+                    margin: 0 auto !important;
+                    width: 40%;
+                }
+                .leftDiv_confirmacion > .parrafo,
+                .leftDiv_confirmacion > .parrafo p{
+                    font-size: 18px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+}
+
+// Responsive-576px
+@include max-width($movil) {}

@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "module": "es6",
+        "moduleResolution": "node",
+        "target": "es5",
+        "allowJs": true,
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "allowSyntheticDefaultImports": true,
+        "types" : ["jquery", "jqueryui", "grecaptcha"],
+        // "typeRoots": [
+        //     "node_modules/@grecaptcha"
+        // ]
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

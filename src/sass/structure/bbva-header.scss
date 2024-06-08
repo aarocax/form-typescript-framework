@@ -1,0 +1,80 @@
+.bbva-header {
+    position: relative;
+    .contenedor {
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+
+        // img {
+        //     margin-left: 5%;
+        // }
+
+        .contenedor-right {
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            justify-content: flex-end;
+
+            p {
+                font-family: $font-regular;
+                font-size: 15px;
+                white-space: nowrap;
+                margin-right: 3%;
+                color: $bbva-white;
+                display: none;
+            }
+
+           
+        }
+
+    }
+    .close-button {
+        background-color: $bbva-aqua-dark;
+        color: $bbva-white;
+        border: none;
+        height: 100%;
+        width: 64px;
+        font-size: 20px;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+// Responsive-1280px
+@include max-width($desktop) {}
+
+// Responsive-992px
+@include max-width($small-desktop) {}
+
+// Responsive-768px
+@include max-width($tablet) {
+    .bbva-header {
+        .contenedor {
+            position: relative;
+            justify-content: flex-start;
+            img {
+                margin: 0;
+            }
+            .contenedor-right {
+                width: fit-content;
+                position: absolute;
+                right: 22%;
+                p {
+                    display: none;
+                    color: white;
+                }
+
+                
+            }
+            
+        }
+        .close-button {
+            background-color: $bbva-blue !important;
+        }
+    }
+}
+
+// Responsive-576px
+@include max-width($movil) {}

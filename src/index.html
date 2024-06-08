@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Typescript Framework</title>
+
+  <link rel="icon" href="" sizes="32x32">
+  <link rel="icon" href="" sizes="192x192">
+  <link rel="apple-touch-icon" href="">
+
+  <link rel="shortcut icon" href="#">
+  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+</head>
+
+<body>
+
+  <div class="popup-overlay legal_popup">
+    <div class="popup-content">
+      <button id="close-cross-legal" name="close" class="close-button close">✖</button>
+      <h2>Pop-Up</h2>
+      <p>popup content.</p>
+    </div>
+  </div>
+
+  <section class="bbva-header background-bbva-blue">
+    <div class="contenedor flex-row">
+      <a href="/"><img src="assets/logo-bbva-white.svg" alt=""></a>
+      <div class="contenedor-right flex-row">
+        <p>Comprueba que los datos sean correctos</p>
+      </div>
+    </div>
+    <button id="close-cross-window" name="close" class="close-button">
+      <img src="assets/close.svg" alt="" aria-hidden="true">
+    </button>
+  </section>
+
+  <div class="form__progreso-barra-wrapper progress-bar" style="display: none;">
+    <div class="form__progreso-barra">
+      <div class="form__progreso-barra-fill" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  
+  <form novalidate action="#" type="GET" id="form-spark" class="form-spark">
+
+    <div id="tab0" style="display: none;" data-type="tab" class="tab-style">
+      <div class="outerDiv contenedor grid col-2 contenedor-intro">
+        <div class="leftDiv flex-column">
+
+          <div class="leftDiv-contain">
+            <h2 class="color-bbva-black">¡Hola!</h2>
+            <h1 class="color-bbva-black">Para ofrecerte una información más personalizada tenemos algunas preguntas para
+              conocer mejor tu proyecto</h1>
+          </div>
+          <div class="leftDiv-contain text">
+            <p class="color-bbva-black">Solo te llevará unos minutos</p>
+          </div>
+        </div>
+        <div class="rightDiv flex-column">
+          <img src="assets/imagen-inicio.jpg" alt="" class="img_config">
+        </div>
+      </div>
+    </div>
+
+    <div id="tab1" style="display: none;" data-type="tab" class="tab-style">
+
+      <div class="outerDiv contenedor">
+        <div class="form__progreso" style="display: block;">
+          <div class="form__progreso-estado color-bbva-dark-gray"><strong>3 de 3</strong></div>
+        </div>
+        
+        <div class="contenido grid col-2 form__element">
+          <div class="leftDiv large">
+
+            <div class="form__element" data-name="direccion">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Nombre y apellidos de la persona de contacto</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="direccion" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="nombre_comercial">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Nombre de la empresa</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="nombre_comercial" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="rightDiv background-bbva-clear-gray toggle-window" style="display: none; !important">
+
+            <div class="container flex-row">
+              <p class="color-bbva-negro">Datos de contacto</p>
+              <input type="checkbox" name="toggle2" id="toggle2" />
+              <label for="toggle2"></i></label>
+            </div>
+
+            <div class="message flex-column">
+              <div class="message_top flex-row">
+                <p class="color-bbva-black">Expandable</p>
+                <div class="right"><a href="">Edit</a></div>
+              </div>
+
+              <div class="content flex-column"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="tab2" style="display: none;" data-type="tab" class="tab-style">
+
+      <div class="outerDiv contenedor">
+        <div class="form__progreso" style="display: block;">
+          <div class="form__progreso-estado color-bbva-dark-gray"><strong>3 de 3</strong></div>
+        </div>
+        
+        <div class="contenido grid col-2 form__element">
+          <div class="leftDiv large">
+
+            <div class="form__element" data-name="telefono">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Nombre y apellidos de la persona de contacto</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="telefono" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="provincia">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Nombre de la empresa</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="provincia" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="rightDiv background-bbva-clear-gray toggle-window" style="display: none; !important">
+
+            <div class="container flex-row">
+              <p class="color-bbva-negro">Datos de contacto</p>
+              <input type="checkbox" name="toggle2" id="toggle2" />
+              <label for="toggle2"></i></label>
+            </div>
+
+            <div class="message flex-column">
+              <div class="message_top flex-row">
+                <p class="color-bbva-black">Expandable</p>
+                <div class="right"><a href="">Edit</a></div>
+              </div>
+
+              <div class="content flex-column"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="tab3" style="display: none;" data-type="tab" class="tab-style">
+      <div class="outerDiv contenedor">
+        <div class="form__progreso" style="display: block;">
+          <div class="form__progreso-estado color-bbva-dark-gray"><strong>1 de 3</strong></div>
+        </div>
+        
+        <div class="grid col-2 form__element">
+          <div class="leftDiv large">
+
+            <div class="form__element" data-name="total_financiacion_externa">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">A lo largo de la vida de tu empresa, ¿cuál es el importe total de capital levantado hasta ahora?</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="total_financiacion_externa" onfocus="resetfield(this)" onkeypress="return onlyNumberKey(event)" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <script>
+              function onlyNumberKey(evt) {
+                  // solo se permiten números
+                  var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+                  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                      return false;
+                  return true;
+              }
+
+              function resetfield(e) {
+                e.value = e.value.replace(/[^0-9]+/g,"");
+                return true;
+              }
+            </script>
+
+            <div class="form__element" data-name="capital_ultima_ronda">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Del total de este capital, ¿cuánto fue en la última ronda?</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="capital_ultima_ronda" onfocus="resetfield(this)" onkeypress="return onlyNumberKey(event)" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="fecha_ultima_ronda">
+
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">¿Hace cuánto tiempo tuvo lugar la última ronda?</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form__select" data-type="field-wrapper">
+                <select class="form__field" name="fecha_ultima_ronda" data-type="field" required value="">
+                  <option value="" disabled="" selected="" hidden="">seleccione una opción</option>
+                </select>
+                <i class="bbva-coronita_chev-down"></i>
+                <label class="form__select-label field">¿Hace cuánto tiempo tuvo lugar la última ronda?</label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon"></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="lead_investor">
+
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">¿Quién fue tu lead investor en esta última ronda?</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form__select" data-type="field-wrapper">
+                <select class="form__field" name="lead_investor" data-type="field" required value="">
+                  <option value="" disabled="" selected="" hidden="">seleccione una opción</option>
+                </select>
+                <i class="bbva-coronita_chev-down"></i>
+                <label class="form__select-label field">¿Quién fue tu lead investor en esta última ronda?</label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon"></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="capital_ronda_futura">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">¿Cuánto capital estás en proceso de obtener durante los próximos 12 meses?</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="capital_ronda_futura" onfocus="resetfield(this)" onkeypress="return onlyNumberKey(event)" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="facturacion">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Indica la facturación aproximada de tu empresa a cierre de 2022</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form__select" data-type="field-wrapper">
+                <select class="form__field" name="facturacion" data-type="field" required value="">
+                  <option value="" disabled="" selected="" hidden="">seleccione una opción</option>
+                </select>
+                <i class="bbva-coronita_chev-down"></i>
+                <label class="form__select-label field">Indica la facturación aproximada de tu empresa a cierre de 2022</label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon"></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="tasa_crecimiento_esperado">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">¿Cuánto esperas que crezca tu facturación a cierre de 2023?</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="tasa_crecimiento_esperado" onfocus="resetfield(this)" onkeypress="return onlyNumberKey(event)" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="rightDiv" style="display: none; !important">
+            <p>&nbsp</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="tab4" style="display: none;" data-type="tab" class="tab-style">
+      <div class="outerDiv contenedor">
+        <div class="form__progreso" style="display: none;">
+          <div class="form__progreso-estado color-bbva-dark-gray"><strong>2 de 3</strong></div>
+        </div>
+        
+        <div class="grid col-2 form__element">
+          <div class="leftDiv large">
+
+            <div class="form__element" data-name="producto">
+              <label class="margin-bottom-xxsmall inblock text_16 title">¿Cómo nos has conocido?</label>
+              <div class="flex-column flex-checkbox" data-type="field-wrapper">
+                <div class="form__checkbox">
+                  <input type="checkbox" class="form__checkbox-input" data-name="producto" name="producto_basico" value="producto_basico" data-type="field">
+                  <label for="" class="field">Oferta financiera básica: cuentas, pagos, tarjetas, banca digital, etc</label>
+                </div>
+                <div class="form__checkbox">
+                  <input type="checkbox" class="form__checkbox-input" data-name="producto" name="producto_valor" value="producto_valor"
+                    data-type="field">
+                  <label for="" class="field">Productos de valor añadido: seguros, FX, comercio exterior</label>
+                </div>
+                <div class="form__checkbox">
+                  <input type="checkbox" class="form__checkbox-input" data-name="producto" name="producto_financiacion" value="producto_financiacion"
+                    data-type="field">
+                  <label for="" class="field">Financiación a corto plazo</label>
+                </div>
+                <div class="form__checkbox">
+                  <input type="checkbox" class="form__checkbox-input" data-name="producto" name="producto_venture" value="producto_venture" data-type="field">
+                  <label for="" class="field">Venture Debt</label>
+                </div>
+                <div class="form__checkbox">
+                  <input type="checkbox" class="form__checkbox-input" data-name="producto" name="producto_conexion" value="producto_conexion" data-type="field">
+                  <label for="" class="field">Conexión con el ecosistema BBVA</label>
+                </div>
+              </div>
+
+
+              <span class="input__error-message">
+                <i class="bbva-coronita_alert input__error-icon"></i>
+                <span class="fielderror"></span>
+              </span>
+              <div class="input__description-message">
+                <i class="bbva-coronita_info input__info-icon"></i>
+                <span>information</span>
+              </div>
+            </div>
+          </div>
+          <div class="rightDiv" style="display: none; !important">
+            <p>&nbsp</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab5" style="display: none;" data-type="tab" class="tab-style">
+
+      <div class="outerDiv contenedor">
+        <div class="form__progreso" style="display: block;">
+          <div class="form__progreso-estado color-bbva-dark-gray"><strong>3 de 3</strong></div>
+        </div>
+        
+        <div class="contenido grid col-2 form__element">
+          <div class="leftDiv large">
+
+            <div class="form__element" data-name="cliente_bbva">
+              <label class="margin-bottom-xxsmall inblock text_16 title"></label>
+              <div class="form__radio-group" data-type="field-wrapper">
+                <div class="form__radio-container">
+                  <div class="form__radio flex-column">
+                    <div class="radio_row flex-row">
+                      <input type="radio" class="form__radiobtn" id="cliente_bbva_1" name="cliente_bbva" data-type="field"
+                        value="cliente_bbva_si">
+                      <label class="field" for="cliente_bbva_1">Sí</label>
+                    </div>
+                    <div class="radio_row flex-row">
+                      <input type="radio" class="form__radiobtn" id="cliente_bbva_2" name="cliente_bbva" data-type="field"
+                        value="cliente_bbva_no">
+                      <label class="field" for="cliente_bbva_2">No</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="input__error-message">
+                <i class="bbva-coronita_alert input__error-icon"></i>
+                <span class="fielderror">You have to choose an option</span>
+              </span>
+              <div class="input__description-message">
+                <i class="bbva-coronita_info input__info-icon"></i>
+                <span>information</span>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="nombre_empresa">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Nombre de la empresa</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="nombre_empresa" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="cif_empresa">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">CIF de la empresa</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="cif_empresa" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="nombre_contacto">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Nombre y apellidos de la persona de contacto</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="nombre_contacto" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__element" data-name="email_contacto">
+              <div class="flex-row interrogacion">
+                <label class="margin-bottom-xxsmall inblock text_16 title">Email de contacto</label>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_help input__info-icon"></i>
+                  <div class="input__info-span">
+                    <span></span>
+                    <button type="button" class="link-button">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form__input" data-type="field-wrapper">
+                <input type="text" class="form__field" name="email_contacto" autocomplete="nope" value=""
+                  data-type="field" maxlength="100" required="required">
+                <label class="form__label field"></label>
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon "></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            
+
+            <div class="form__element" data-name="legal">
+              <h4 class="subtitle">Tratamiento de datos personales</h4>  
+              <label class="margin-bottom-xxsmall inblock text_16 title">¿Cómo nos has conocido?</label>
+              <div class="flex-column flex-checkbox" data-type="field-wrapper">
+                <div class="form__checkbox">
+                  <input type="checkbox" class="form__checkbox-input" data-name="legal" name="legal_leido" value="legal_leido" data-type="field">
+                  <label for="" class="field"></label>
+                </div>
+
+                <div class="form__checkbox">
+                  <input type="checkbox" class="form__checkbox-input" data-name="legal" name="legal_comunicacion" value="legal_comunicacion"
+                    data-type="field">
+                  <label for="" class="field">Redes sociales</label>
+                </div>
+                
+                <div class="form__checkbox">
+                  <input type="checkbox" class="form__checkbox-input" data-name="legal" name="legal_tratamiento" value="legal_tratamiento" data-type="field">
+                  <label for="" class="field">Aceleradoras</label>
+                </div>
+
+                <span class="input__error-message">
+                  <i class="bbva-coronita_alert input__error-icon"></i>
+                  <span class="fielderror"></span>
+                </span>
+                <div class="input__description-message">
+                  <i class="bbva-coronita_info input__info-icon"></i>
+                  <span>information</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="rightDiv background-bbva-clear-gray toggle-window" style="display: none; !important">
+
+            <div class="container flex-row">
+              <p class="color-bbva-negro">Datos de contacto</p>
+              <input type="checkbox" name="toggle2" id="toggle2" />
+              <label for="toggle2"></i></label>
+            </div>
+
+            <div class="message flex-column">
+              <div class="message_top flex-row">
+                <p class="color-bbva-black">Expandable</p>
+                <div class="right"><a href="">Edit</a></div>
+              </div>
+
+              <div class="content flex-column"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="tab6" style="display: none;" data-type="tab" class="tab-style background-bbva-blue2">
+      <div class="outerDiv contenedor grid col-2 contenedor-final">
+        <div class="leftDiv flex-column">
+          <div class="flex-column leftDiv_confirmacion">
+            <svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M18.6436 32.1692L11.245 24.657L8 28.0524L18.6929 38.9088L41.5727 15.3447L38.2784 12L18.6436 32.1692Z"
+                fill="white" />
+              <mask id="mask0_0_18530" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="8" y="12" width="34"
+                height="27">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M18.6436 32.1692L11.2452 24.657L8 28.0524L18.693 38.9088L41.5729 15.3445L38.2786 12L18.6436 32.1692Z"
+                  fill="white" />
+              </mask>
+              <g mask="url(#mask0_0_18530)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M7 39.9474H42.5831V11H7V39.9474Z" fill="#5AC4C4" />
+              </g>
+            </svg>
+
+            <h2 class="color-bbva-white title-white">Hemos recibido tu información correctamente</h2>
+
+            <p class="color-bbva-white parrafo">Hemos enviado a</p>
+          </div>
+
+          <input class="form__button btn-secondary" type="button" id="close" value="Cerrar">
+        </div>
+        <div class="rightDiv" style="display: none;">
+          <p>&nbsp;</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="form__controls contenedor" data-type="form-controls">
+      <button  class="form__button btn-secondary" type="button" id="previous" style="display: none;">
+        atras
+      </button>
+      <button  class="form__button btn-secondary" type="button" id="next" style="display: none;">
+        Continuar
+      </button>
+      <input class="form__button btn-secondary" type="submit" id="send-form" value="Enviar" style="display: none;">
+    </section>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="js/scripts.bundle.js"></script>
+  <script src="js/appts.bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+.contenedor{
+    max-width: $desktop;
+    margin: auto;
+    padding: 0;
+}
+
+.grid{
+    // Flexbox
+    @supports not (display: grid) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @for $i from 1 through 12 {
+            $width: percentage(math.div(1, $i)) - 2;
+            &.col-#{$i} {
+                >* {
+                    width: $width;
+                    margin-left:1%;
+                    margin-right: 1%;
+                    margin-bottom: math.div($margin, 2);
+                }
+            }
+        }
+    }
+    // Grid
+    @supports (display: grid) { 
+        display: grid;
+        grid-column-gap:$margin;
+        grid-row-gap: $margin;
+        @for $i from 1 through 12 {
+            &.col-#{$i} {
+                grid-template-columns: repeat($i, 1fr);
+            }
+        }
+    }
+    &.justify-content{
+        &--center{
+            justify-content: center;
+        }
+    }
+    &.justify-items{
+        &--center{
+            justify-items: center;
+        }
+    }
+}
+
+// Responsive-1380px
+@include max-width($desktop){
+    .contenedor{
+        max-width: calc(100% - 20px);
+    }
+}
+// Responsive-992px
+@include max-width($small-desktop){
+    .grid{
+        // Flexbox
+        @supports not (display: grid) {
+            @for $i from 6 through 12 {
+                &.col-#{$i} {
+                    >* {
+                        width: 23%;
+                    }
+                }
+            }
+        }
+        // Grid
+        @supports (display: grid) {
+            @for $i from 6 through 12 {
+                &.col-#{$i} {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        }
+    }
+}
+// Responsive-768px
+@include max-width($tablet){
+    .grid{
+        // Flexbox
+        @supports not (display: grid) {
+            @for $i from 3 through 12 {
+                &.col-#{$i} {
+                    >* {
+                        width: 48%;
+                    }
+                }
+            }
+        }
+        // Grid
+        @supports (display: grid) {
+            @for $i from 3 through 12 {
+                &.col-#{$i} {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+        }
+    }
+}
+// Responsive-576px
+@include max-width($movil){
+    .grid{
+        // Flexbox
+        @supports not (display: grid) {
+            @for $i from 1 through 12 {
+                &.col-#{$i} {
+                    >* {
+                        width: 100%;
+                        margin-left: 0;
+                        margin-right:0 ;
+                    }
+                }
+            }
+        }
+        // Grid
+        @supports (display: grid) {
+            @for $i from 1 through 12 {
+                &.col-#{$i} {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+    }
+}
+

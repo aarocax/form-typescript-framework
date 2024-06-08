@@ -1,0 +1,16 @@
+header{
+    
+}
+
+// Responsive-1380px
+@include max-width($desktop){
+}
+// Responsive-992px
+@include max-width($small-desktop){
+}
+// Responsive-768px
+@include max-width($tablet){
+}
+// Responsive-576px
+@include max-width($movil){
+}

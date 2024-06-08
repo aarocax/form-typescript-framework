@@ -1,0 +1,38 @@
+{
+  "name": "bbva_spark_form_2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build-dev": "webpack --mode development",
+    "build-prod": "webpack --mode production --config webpack-prod.config.js",
+    "watch": "webpack --watch --progress --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.5.14",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.2",
+    "node-sass": "^8.0.0",
+    "prettier": "^2.8.0",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "@types/grecaptcha": "^3.0.4",
+    "@types/jqueryui": "^1.12.16",
+    "copy-webpack-plugin": "^11.0.0",
+    "file-loader": "^6.2.0",
+    "jquery": "^3.6.2",
+    "jquery-ui": "^1.13.2",
+    "sass": "^1.56.1"
+  }
+}

@@ -1,0 +1,418 @@
+@keyframes ss-valueIn {
+    0% {
+        transform: scale(0);
+        opacity: 0
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes ss-valueOut {
+    0% {
+        transform: scale(1);
+        opacity: 1
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0
+    }
+}
+
+.ss-hide {
+    display: none !important
+}
+
+.ss-main {
+    background: $bbva-clear-gray;
+    color: $bbva-black;
+    outline: 0;
+    border: none;
+    font-family: $font-regular;
+    letter-spacing: 0;
+    border-bottom: 1px solid $bbva-dark-gray;
+    appearance: none;
+    min-width: 200px;
+    width: 100%;
+    padding: 10px 20px 8px 16px;
+    height: 52px;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ss-main.ss-disabled {
+    background-color: #dcdee2;
+    cursor: not-allowed
+}
+
+.ss-main.ss-disabled .ss-values .ss-disabled {
+    color: $bbva-dark-gray
+}
+
+.ss-main.ss-disabled .ss-values .ss-value .ss-value-delete {
+    cursor: not-allowed
+}
+
+.ss-main.ss-open-above {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px
+}
+
+.ss-main.ss-open-below {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px
+}
+
+.ss-main .ss-values {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex: 1 1 100%
+}
+
+.ss-main .ss-values .ss-placeholder {
+    display: flex;
+   
+    margin: auto 0px auto 0px;
+    line-height: 1em;
+    align-items: center;
+    width: 100%;
+    color: #8d8d8d;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.ss-main .ss-values .ss-max {
+    display: flex;
+    user-select: none;
+    align-items: center;
+    width: fit-content;
+    font-size: 12px;
+    color: $bbva-white;
+    line-height: 1;
+}
+
+.ss-main .ss-values .ss-single {
+    display: flex;
+}
+
+.ss-main .ss-values .ss-value {
+    display: flex;
+    user-select: none;
+    align-items: center;
+    width: fit-content;
+
+    animation-name: ss-valueIn;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both
+}
+
+.ss-main .ss-values .ss-value.ss-value-out {
+    animation-name: ss-valueOut;
+    animation-timing-function: ease-out
+}
+
+.ss-main .ss-values .ss-value .ss-value-text {
+    font-size: 15px;
+    color: $bbva-black;
+}
+
+.ss-main .ss-values .ss-value .ss-value-delete {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-left: solid 1px var($bbva-white)
+}
+
+.ss-main .ss-values .ss-value .ss-value-delete svg {
+}
+
+.ss-main .ss-values .ss-value .ss-value-delete svg path {
+    fill: none;
+    stroke: $bbva-white;
+    stroke-width: 18;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+.ss-main .ss-deselect {
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    flex: 0 1 auto;
+    width: 8px;
+    height: 8px;
+}
+
+.ss-main .ss-deselect svg {
+    width: 8px;
+    height: 8px
+}
+
+.ss-main .ss-deselect svg path {
+    fill: none;
+    stroke: $bbva-dark-gray;
+    stroke-width: 20;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+.ss-main .ss-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+}
+
+.ss-main .ss-arrow path {
+    fill: none;
+    stroke: $bbva-medium-blue;
+    stroke-width: 18;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition-timing-function: ease-out;
+}
+
+.ss-content {
+    position: absolute;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    width: auto;
+    box-sizing: border-box;
+    border: solid 1px #dcdee2;
+    background-color: $bbva-white;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: center top;
+    overflow: hidden;
+    z-index: 10000
+}
+
+.ss-content.ss-relative {
+    position: relative;
+    height: 100%
+}
+
+.ss-content.ss-open-above {
+    flex-direction: column-reverse;
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: center bottom;
+}
+
+.ss-content.ss-open-below {
+    opacity: 1;
+    transform: scaleY(1);
+    transform-origin: center top;
+}
+
+.ss-content .ss-search {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.ss-content .ss-search input {
+    display: inline-flex;
+    font-size: inherit;
+    line-height: inherit;
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0px;
+    margin: 0;
+    border: 1px solid #dcdee2;
+    background-color: $bbva-white;
+    outline: 0;
+    text-align: left;
+    box-sizing: border-box;
+    color: $bbva-black;
+    font-size: 15px;
+}
+
+.ss-content .ss-search input::placeholder {
+    color: #8d8d8d;
+    vertical-align: middle
+}
+
+.ss-content .ss-search input:focus {
+    box-shadow: 0 0 5px $bbva-blue2
+}
+
+.ss-content .ss-search .ss-addable {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex: 0 0 auto;
+    height: auto;
+   
+    border: 1px solid #dcdee2;
+}
+
+.ss-content .ss-search .ss-addable svg {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 1 auto;
+    width: 12px;
+    height: 12px;
+}
+
+.ss-content .ss-search .ss-addable svg path {
+    fill: none;
+    stroke: $bbva-dark-gray;
+    stroke-width: 18;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+.ss-content .ss-list {
+    flex: 1 1 auto;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto
+}
+
+.ss-content .ss-list .ss-error {
+}
+
+.ss-content .ss-list .ss-searching {
+    color: $bbva-dark-gray;
+}
+
+.ss-content .ss-list .ss-optgroup.ss-close .ss-option {
+    display: none !important
+}
+
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-label-text {
+    flex: 1 1 auto;
+    font-weight: bold;
+    color: $bbva-dark-gray
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label:has(.ss-arrow) {
+    cursor: pointer
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-selectall {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-selectall:hover {
+    opacity: .5
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-selectall.ss-selected svg path {
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-selectall span {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    text-align: center;
+    font-family: $font-light;
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-selectall svg {
+    flex: 0 1 auto;
+    width: 13px;
+    height: 13px;
+    display: none;
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-selectall svg path {
+    fill: none;
+    stroke: #00b755;
+    stroke-linecap: round;
+    stroke-linejoin: round
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-selectall svg:first-child {
+    stroke-width: 5
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-selectall svg:last-child {
+    stroke-width: 11
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-closable {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-closable .ss-arrow {
+    flex: 1 1 auto;
+    width: 10px;
+    height: 10px
+}
+
+.ss-content .ss-list .ss-optgroup .ss-optgroup-label .ss-optgroup-actions .ss-closable .ss-arrow path {
+    fill: none;
+    stroke: $bbva-dark-gray;
+    stroke-width: 18;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition-timing-function: ease-out;
+}
+
+.ss-content .ss-list .ss-optgroup .ss-option {
+
+}
+
+.ss-content .ss-list .ss-option {
+    display: flex;
+    padding: 10px 10px;
+    color: $bbva-dark-gray;
+    cursor: pointer;
+    user-select: none
+}
+
+.ss-content .ss-list .ss-option:hover {
+    color: $bbva-white;
+    background-color: $bbva-blue2
+}
+
+.ss-content .ss-list .ss-option.ss-highlighted,
+.ss-content .ss-list .ss-option:not(.ss-disabled).ss-selected {
+    color: $bbva-white;
+    background-color: $bbva-blue2
+}
+
+.ss-content .ss-list .ss-option.ss-disabled {
+    cursor: not-allowed;
+    background-color: #dcdee2;
+    display: none;
+}
+
+.ss-content .ss-list .ss-option.ss-disabled:hover {
+    color: $bbva-dark-gray
+}
+
+.ss-content .ss-list .ss-option .ss-search-highlight {
+    background-color: #fffb8c
+}
+
+/*# sourceMappingURL=slimselect.css.map */
